@@ -1,7 +1,7 @@
 html {
-  background-image: linear-gradient(#c13100 0 20%, white 20% 80%, #c13100 80%) 100%;
+  /* background-image: linear-gradient(#c13100 0 20%, white 20% 80%, #c13100 80%) 100%; */
   /* background-color: #c13100; */
-  background-size: contain;
+  background-size: cover;
   background-image: url("./img/bg.png");
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -34,11 +34,11 @@ body {
 }
 
 h2 {
-  height: 150px;
+  height: 100px;
   text-align: center;
-  color: yellow;
+  /* color: yellow;
   -webkit-text-stroke-width: 3px;
-  -webkit-text-stroke-color: #3d1f00;
+  -webkit-text-stroke-color: #3d1f00; */
 }
 
 .denizen {
@@ -53,24 +53,26 @@ h2 {
 }
 
 .name {
-  height: 50px;
-  line-height: 50px;
-  background-color: #33e;
-  background-image: linear-gradient(#3d1f00, #33e 20%, #99f 80%);
+  height: 70px;
+  line-height: 70px;
+  background-color: #304faf;
+  background-image: linear-gradient(#2740be, #304faf 20%, #536cb5 80%);
   padding: 0;
   border: 1px solid #119;
-  border-radius: 25px;
-  margin: 80px 100px 5px 100px;
+  border-radius: 35px;
+  margin: 25px auto;
+  padding-bottom: 5px;
 }
 
 input {
   font-weight: 600;
   color: white;
-  font-size: 40px;
-  width: 90%;
+  font-size: 60px;
+  width: 100%;
   text-align: center;
   background-color: transparent;
   border: 0 solid white;
+  border-radius: 30px;
 }
 
 #choco input {
@@ -78,8 +80,8 @@ input {
 }
 
 #choco .name {
-  background-color: #ee3;
-  background-image: linear-gradient(#3d1f00, #ee3 20%, #ff6 80%);
+  background-color: #eabb75;
+  background-image: linear-gradient(#e1c7a5, #eabb75 20%, #f3cc91 80%);
   border: 1px solid #991;
 }
 
@@ -96,7 +98,7 @@ input {
   display: inline-block;
   background-size: cover;
   background-position: center;
-  background-image: linear-gradient(#fffbd0, #fffbd0);
+  background-image: linear-gradient(#e1c7a3, #e1c7a3);
   cursor: pointer;
   border-radius: 20px;
   border: #3d1f00 solid 1px;
@@ -113,16 +115,16 @@ input {
 }
 
 #berry .img {
-  color: #33e;
+  color: #2740be;
   width: 100%;
-  background-image: linear-gradient(#99f, #99f);
+  background-image: linear-gradient(#7788bb, #7788bb);
   /* height: 490px; */
   /* background-image: url("img/berry.gif");
   transform: scaleX(-1); */
 }
 
 #choco .img {
-  color: #ee3;
+  color: #eabb75;
   /* background-image: url("img/choco.png"); */
 }
 
@@ -450,9 +452,9 @@ input {
   animation-delay: 1s;
   transform-origin: center;
   animation-name: winning;
-  font-size: 5.5rem;
+  font-size: 5.2rem;
   text-shadow: #3d1f00 5px 5px 5px;
-  color: #c13100;
+  color: white;
 }
 
 @keyframes winning {

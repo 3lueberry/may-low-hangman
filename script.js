@@ -65,7 +65,7 @@
     win.querySelector(".name").className = "lose";
     lose.className = "lose";
     const winner = document.querySelector(".winner.hidden");
-    winner.innerHTML = `WINNER IS TEAM ${win.querySelector("input").value}`;
+    winner.innerHTML = `WINNER IS ${win.querySelector("input").value}`;
     winner.className = "winner show";
   };
 
