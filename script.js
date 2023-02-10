@@ -7,6 +7,7 @@
   let team2score = 0;
   let savedscore = [0, 0];
   let waiting = false;
+  let gameover = false;
 
   const setAttr = (team, score) => {
     team.querySelector("img").setAttribute("src", `img/frames/${score}.PNG`);
@@ -21,8 +22,13 @@
         setAttr(team1, team1score);
         animate("P1", team1score, false);
         savedscore[0] = team1score;
+
+        if (team1score === 10)
+          setTimeout(() => {
+            ending(document.querySelector("#berry"), document.querySelector("#choco"));
+          }, 1000);
         waiting = false;
-      }, 600);
+      }, 500);
     }
   };
 
@@ -36,6 +42,10 @@
         animate("P2", team2score, false);
         savedscore[1] = team2score;
         waiting = false;
+        if (team2score === 10)
+          setTimeout(() => {
+            ending(document.querySelector("#choco"), document.querySelector("#berry"));
+          }, 1000);
       }, 600);
     }
   };
@@ -43,12 +53,20 @@
   const animate = (team, score, show = true) => {
     try {
       if (show) document.querySelector(`#${team}${score}`).className = "show";
-      else {
-        document.querySelector(`#${team}${score}`).className = "";
-        if (score === 9)
-          document.querySelector(`#${team}${score}`).setAttribute("style", "width:100% !important");
-      }
+      else document.querySelector(`#${team}${score}`).className = "";
     } catch (e) {}
+  };
+
+  const ending = (win, lose) => {
+    gameover = true;
+    team1.removeEventListener("click", team1plus, false);
+    team2.removeEventListener("click", team2plus, false);
+    win.querySelector(".img").className = "img finished";
+    win.querySelector(".name").className = "lose";
+    lose.className = "lose";
+    const winner = document.querySelector(".winner.hidden");
+    winner.innerHTML = `WINNER IS TEAM ${win.querySelector("input").value}`;
+    winner.className = "winner show";
   };
 
   team1.addEventListener("click", team1plus, false);
@@ -57,6 +75,7 @@
   document.addEventListener(
     "keydown",
     ({ code }) => {
+      if (gameover) return;
       switch (code) {
         case "ArrowLeft":
           if (team1score === 0) return;
