@@ -1,0 +1,365 @@
+html,
+body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+    "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 2rem;
+  color: white;
+  width: 1280px;
+  /* height: 800px; */
+  /*position: fixed;*/
+  margin: 50px auto;
+  background-image: linear-gradient(#c13100, #fe9800);
+  /* background-image: url("./bg.png"); */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+h2 {
+  text-align: center;
+  color: yellow;
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: #3d1f00;
+}
+
+.denizen {
+  width: 49%;
+  /* height: 100%; */
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  text-align: center;
+}
+
+.name {
+  height: 50px;
+  line-height: 50px;
+  background-color: #33e;
+  background-image: linear-gradient(#3d1f00, #33e 20%, #66f 80%);
+  padding: 0;
+  border: 1px solid #119;
+  border-radius: 25px;
+  margin: 25px 0;
+}
+
+input {
+  color: white;
+  font-size: 40px;
+  width: 90%;
+  text-align: center;
+  background-color: transparent;
+  border: 0 solid white;
+}
+
+#choco .name {
+  background-color: #e33;
+  background-image: linear-gradient(#3d1f00, #e33 20%, #f66 80%);
+  border: 1px solid #911;
+}
+
+.main {
+  width: 100%;
+  /* height: 550px; */
+  display: block;
+  position: relative;
+}
+
+.img {
+  width: 100%;
+  /* height: 500px; */
+  display: inline-block;
+  background-size: cover;
+  background-position: center;
+  background-image: linear-gradient(#fffbd0, #fffbd0);
+  cursor: pointer;
+  border-radius: 48%;
+  border: #3d1f00 solid 1px;
+}
+
+/* #choco .img {
+  background-image: linear-gradient(#e33, #f66);
+} */
+
+.img img {
+  width: 620px;
+  /* height: 490px; */
+  display: block;
+}
+
+#berry .img {
+  color: #33e;
+  width: 100%;
+  /* height: 490px; */
+  /* background-image: url("img/berry.gif");
+  transform: scaleX(-1); */
+}
+
+#choco .img {
+  color: #e33;
+  /* background-image: url("img/choco.png"); */
+}
+
+.parts img {
+  position: absolute;
+  display: none;
+  border-radius: 48%;
+  border: transparent solid 0px;
+}
+
+.parts img.show {
+  display: block;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+}
+
+@keyframes drop {
+  0% {
+    transform: translateY(-300px) rotateZ(10deg);
+  }
+  60% {
+    transform: translateY(-20px) rotateZ(-20deg);
+  }
+  75% {
+    transform: rotateZ(8deg);
+  }
+  90% {
+    transform: rotateZ(-4deg);
+  }
+  100% {
+    transform: rotateZ(0);
+  }
+}
+
+#P11,
+#P21 {
+  top: 1%;
+  left: 1%;
+  width: 99%;
+  transform-origin: bottom;
+  animation-name: drop;
+}
+
+@keyframes loop {
+  0% {
+    transform: translateY(-300px) scaleY(50%);
+  }
+  60% {
+    transform: translateY(-20px) scaleY(150%);
+  }
+  75% {
+    transform: scaleY(85%);
+  }
+  90% {
+    transform: scaleY(115%);
+  }
+  100% {
+    transform: scaleY(100%);
+  }
+}
+
+#P12,
+#P22 {
+  top: 1%;
+  left: 34%;
+  width: 33%;
+  transform-origin: top;
+  animation-name: loop;
+}
+
+@keyframes head {
+  0% {
+    transform: translate(-300px, 100px) rotateZ(-720deg);
+  }
+  60% {
+    transform: translate(-80px, -50px) rotateZ(360deg);
+  }
+  75% {
+    transform: translate(-20px, -50px) rotateZ(720deg);
+  }
+  90% {
+    transform: translate(0, 0) rotateZ(1080deg);
+  }
+  100% {
+    transform: translate(0, 0) rotateZ(1440deg);
+  }
+}
+
+#P13,
+#P23 {
+  top: 32%;
+  left: 45.2%;
+  width: 13%;
+  transform-origin: center;
+  animation-name: head;
+}
+
+@keyframes body {
+  0% {
+    transform: translateY(-500px) rotateZ(-90deg);
+  }
+  40% {
+    transform: translateY(-190px) rotateZ(-90deg);
+  }
+  55% {
+    transform: translateY(-215px) rotateZ(-90deg);
+  }
+  70% {
+    transform: translateY(-190px) rotateZ(-90deg);
+  }
+  100% {
+    transform: translate(0, 0) rotateZ(0);
+  }
+}
+
+#P14,
+#P24 {
+  top: 41%;
+  left: 44%;
+  width: 16%;
+  transform-origin: center;
+  animation-name: body;
+}
+
+@keyframes leftA {
+  0% {
+    transform: translate(-300px, 100px) rotateZ(-135deg);
+  }
+  40% {
+    transform: translate(110px, -100px) rotateZ(0deg);
+  }
+  75% {
+    transform: translate(50px, -150px) rotateZ(360deg);
+  }
+  90% {
+    transform: translate(20px, -50px) rotateZ(540deg);
+  }
+  100% {
+    transform: translate(0, 0) rotateZ(720deg);
+  }
+}
+
+@keyframes rightA {
+  0% {
+    transform: translate(300px, 100px) rotateZ(135deg);
+  }
+  40% {
+    transform: translate(-130px, -100px) rotateZ(0deg);
+  }
+  75% {
+    transform: translate(-50px, -150px) rotateZ(-360deg);
+  }
+  90% {
+    transform: translate(-20px, -50px) rotateZ(-540deg);
+  }
+  100% {
+    transform: translate(0, 0) rotateZ(-720deg);
+  }
+}
+
+#P15,
+#P25 {
+  top: 41.5%;
+  left: 43.6%;
+  width: 22.5%;
+  transform-origin: center;
+  animation-name: leftA;
+}
+
+#P16,
+#P26 {
+  top: 42.5%;
+  left: 38.8%;
+  width: 20.8%;
+  transform-origin: center;
+  animation-name: rightA;
+}
+
+@keyframes leg {
+  0% {
+    transform: scale(100%, 0);
+  }
+  40% {
+    transform: scale(80%, 150%);
+  }
+  75% {
+    transform: scale(150%, 90%);
+  }
+  90% {
+    transform: scale(90%, 120%);
+  }
+  100% {
+    transform: scale(100%, 100%);
+  }
+}
+
+#P17,
+#P27 {
+  top: 51%;
+  left: 36.8%;
+  width: 28%;
+  transform-origin: top;
+  animation-name: leg;
+}
+
+#P18,
+#P28 {
+  top: 52.6%;
+  left: 40.6%;
+  width: 25%;
+  transform-origin: top;
+  animation-name: leg;
+}
+
+@keyframes uniform {
+  0% {
+    transform: scaleX(2000%);
+    opacity: 0;
+  }
+  70% {
+    transform: scaleX(50%);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scaleX(105%);
+    opacity: 1;
+  }
+}
+
+#P19,
+#P29 {
+  top: 39.4%;
+  left: 33.8%;
+  width: 36.2%;
+  transform-origin: center;
+  animation-name: uniform;
+}
+
+@keyframes dead {
+  0% {
+    transform: scale(100%, 100%);
+  }
+  50% {
+    transform: scale(1500%, 1500%);
+  }
+  100% {
+    transform: scale(100%, 100%);
+  }
+}
+
+#P110,
+#P210 {
+  top: 30%;
+  left: 43%;
+  width: 17.5%;
+  transform-origin: center;
+  animation-name: dead;
+}
